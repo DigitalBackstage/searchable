@@ -1,0 +1,28 @@
+branches:
+  only:
+    - master
+
+language: php
+
+php:
+  - 7.1
+  - nightly
+
+cache:
+  directories:
+     - $HOME/.composer/cache/files
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+      env: COMPOSER_OPTIONS="--prefer-lowest"
+  allow_failures:
+    - php: nightly
+
+install:
+  - make vendor/autoload.php
+
+script:
+  - composer validate
+  - make test

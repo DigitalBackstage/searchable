@@ -14,5 +14,10 @@
             "DigitalBackstage\\Searchable\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "greg0ire/enum": "^3.5"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^4.2"
+    }
 }
