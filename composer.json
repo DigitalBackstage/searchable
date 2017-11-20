@@ -1,0 +1,18 @@
+{
+    "name": "digital-backstage/searchable",
+    "description": "Provides interoperability with pagination libs",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Digital Backstage",
+            "email": "tech@digital-backstage.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DigitalBackstage\\Searchable\\": "src/"
+        }
+    },
+    "require": {}
+}
