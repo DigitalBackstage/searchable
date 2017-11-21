@@ -1,6 +1,8 @@
 <?php
 
-namespace DigitalBackstage\Searchable;
+namespace DigitalBackstage\Searchable\QueryExpression;
+
+use DigitalBackstage\Searchable\QueryExpression;
 
 abstract class AbstractCompositeExpression implements CompositeExpression
 {

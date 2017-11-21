@@ -2,7 +2,9 @@
 
 namespace DigitalBackstage\Searchable\QueryExpression;
 
-class Match
+use DigitalBackstage\Searchable\QueryExpression;
+
+class Match implements QueryExpression
 {
     /**
      * @var string
