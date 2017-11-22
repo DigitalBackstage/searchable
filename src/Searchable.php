@@ -7,8 +7,8 @@ use DigitalBackstage\Searchable\Paginable;
 interface Searchable
 {
     /**
-     * @throws SortNotSupported if a SortedSearchQuery is passed but
-     *                          SortableSearchable is not implemented
+     * @throws SortNotSupported if an attempt to sort is made but
+     *                          SearchableSortable is not implemented.
      * @throws UnsupportedField if an unsupported search field is used in
      *                          the expression or if an unsupported sort field
      *                          is used.
