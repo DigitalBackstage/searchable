@@ -2,6 +2,6 @@
 
 namespace DigitalBackstage\Searchable;
 
-final class SortNotSupported implements SearchableException
+final class SortNotSupported extends \Exception implements SearchableException
 {
 }
