@@ -8,10 +8,16 @@ final class SearchQuery
     private $pageSize;
     private $pageNumber;
 
+    /**
+     * @var array
+     */
+    private $sortFields;
+
     public function __construct(
         QueryExpression $expression,
-        int $pageSize = 5,
-        int $pageNumber = 1
+        ?int $pageSize = 5,
+        ?int $pageNumber = 1,
+        ?array $sortField = []
     ) {
         $this->expression = $expression;
         if ($pageSize < 1) {
@@ -28,6 +34,11 @@ final class SearchQuery
             ));
         }
         $this->pageNumber = $pageNumber;
+        $this->sortFields = [];
+        foreach ($sortField as $field => $direction) {
+            SortDirection::assertValidValue($direction);
+            $this->sortFields[$field] = $direction;
+        }
     }
 
     public function expression(): QueryExpression
@@ -49,5 +60,10 @@ final class SearchQuery
     public function pageNumber(): int
     {
         return $this->pageNumber;
+    }
+
+    public function sortFields(): array
+    {
+        return $this->sortFields;
     }
 }

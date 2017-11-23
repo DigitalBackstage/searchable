@@ -1,8 +1,10 @@
 <?php
 
-namespace DigitalBackstage\Searchable;
+namespace DigitalBackstage\Searchable\QueryExpression;
 
-interface CompositeExpression
+use DigitalBackstage\Searchable\QueryExpression;
+
+interface CompositeExpression extends QueryExpression
 {
     /**
      * @return QueryExpression[]

@@ -1,6 +1,8 @@
 <?php
 
-namespace DigitalBackstage\Searchable;
+namespace DigitalBackstage\Searchable\QueryExpression;
+
+use DigitalBackstage\Searchable\QueryExpression;
 
 abstract class AbstractCompositeExpression implements CompositeExpression
 {
@@ -9,17 +11,9 @@ abstract class AbstractCompositeExpression implements CompositeExpression
      */
     private $children;
 
-    public function __construct(iterable $children)
+    public function __construct(QueryExpression ...$children)
     {
-        $this->children = [];
-        foreach ($children as $child) {
-            $this->addChild($child);
-        }
-    }
-
-    private function addChild(QueryExpression $queryExpression): void
-    {
-        $this->children[] = $queryExpression;
+        $this->children = $children;
     }
 
     public function getComponents(): iterable

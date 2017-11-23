@@ -2,6 +2,6 @@
 
 namespace DigitalBackstage\Searchable;
 
-interface SearchableException extends \Throwable
+interface SearchableException
 {
 }

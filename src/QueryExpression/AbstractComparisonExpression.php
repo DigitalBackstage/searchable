@@ -2,31 +2,25 @@
 
 namespace DigitalBackstage\Searchable\QueryExpression;
 
-class Match
+use DigitalBackstage\Searchable\QueryExpression;
+
+abstract class AbstractComparisonExpression implements QueryExpression
 {
     /**
      * @var string
      */
     private $field;
-    private $operator;
     private $value;
 
-    public function __construct(string $field, string $operator, $value)
+    public function __construct(string $field, $value)
     {
         $this->field = $field;
-        Operator::assertValidValue($operator);
-        $this->operator = $operator;
         $this->value = $value;
     }
 
     public function field(): string
     {
         return $this->field;
-    }
-
-    public function operator(): string
-    {
-        return $this->operator;
     }
 
     public function value()
