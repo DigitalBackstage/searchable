@@ -23,6 +23,6 @@ final class Functional implements QueryExpression\Converter
 
     public function supports(QueryExpression $queryExpression): bool
     {
-        return $queryExpression instanceof FunctionalExpression;
+        return $queryExpression instanceof QueryExpression\FunctionalExpression;
     }
 }
