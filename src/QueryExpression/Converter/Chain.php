@@ -15,7 +15,7 @@ final class Chain implements QueryExpression\Converter
 
     public function supports(QueryExpression $queryExpression): bool
     {
-        foreach ($children as $child) {
+        foreach ($this->children as $child) {
             if ($child->supports($queryExpression)) {
                 return true;
             }
